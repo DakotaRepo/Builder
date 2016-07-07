@@ -15,18 +15,22 @@ int main()
         else printf("\nInvalid difficulty selected, please try again\n");
        }
 
+    switch(difficulty){
 
-    if (difficulty == 'e' || difficulty == 'E'){
+    case 'e': case 'E':
         currency = 3000;
         printf("\nEasy mode selected, you may spend %d on units\n\n", currency);
-    }
-    else if (difficulty == 'n' || difficulty == 'N'){
+        break;
+
+    case 'n': case 'N':
         currency = 2000;
         printf("\nNormal mode selected, you may spend %d on units\n\n", currency);
-    }
-    else {
+        break;
+
+    case 'h': case 'H':
         currency = 1000;
         printf("\nHard mode selected, you may spend %d on units\n\n", currency);
+        break;
     }
     printf("Please purchase your units. Your balance is %d\n\n[I]nfantry costs 500, [C]avalry costs 1000\n", currency);
     while (currency > 0){
@@ -50,5 +54,6 @@ int main()
     }
         if (currency <= 0) break;
     }
-    return 0;
+    printf("\n\nPurchase completed.");
+    exit(0);
 }
